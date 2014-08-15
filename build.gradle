@@ -1,0 +1,45 @@
+apply plugin: 'war'
+apply plugin: 'appengine'
+
+def appId     = "hellogradle"					
+def appEmail  = "romin.irani@mindstormsoftware.com"		
+
+def appengineVersion = "1.9.6"
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.google.appengine:gradle-appengine-plugin:1.9.6"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	appengineSdk "com.google.appengine:appengine-java-sdk:${appengineVersion}"
+	compile "javax.servlet:servlet-api:2.5"
+	compile "com.google.appengine:appengine-api-1.0-sdk:${appengineVersion}"
+}
+
+appengine {
+
+    httpPort = 8888
+    downloadSdk = true
+
+    appcfg {
+    
+        email = "${appEmail}"
+		noCookies = true
+		oauth2 = true
+		
+
+        app {
+            id = "${appId}"
+            version = '1'
+        }
+    }
+}
