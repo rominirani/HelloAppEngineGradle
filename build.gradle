@@ -35,11 +35,5 @@ appengine {
         email = "${appEmail}"
 		noCookies = true
 		oauth2 = true
-		
-
-        app {
-            id = "${appId}"
-            version = '1'
-        }
     }
 }
