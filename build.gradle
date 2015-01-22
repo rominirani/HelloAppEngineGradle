@@ -1,17 +1,16 @@
 apply plugin: 'war'
 apply plugin: 'appengine'
 
-def appId     = "hellogradle"					
-def appEmail  = "romin.irani@mindstormsoftware.com"		
+def appEmail  = "YOUR_GOOGLE_ACCOUNT_EMAIL_ADDRESS"		
 
-def appengineVersion = "1.9.6"
+def appengineVersion = "1.9.17"
 
 buildscript {
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath "com.google.appengine:gradle-appengine-plugin:1.9.6"
+        classpath "com.google.appengine:gradle-appengine-plugin:1.9.17"
     }
 }
 
