@@ -3,10 +3,11 @@ apply plugin: 'appengine'
 
 def appEmail  = "YOUR_GOOGLE_ACCOUNT_EMAIL_ADDRESS"		
 
-def appengineVersion = "1.9.17"
+def appengineVersion = "1.9.42"
 
 buildscript {
     repositories {
+	    jcenter()
         mavenCentral()
     }
     dependencies {
@@ -15,6 +16,7 @@ buildscript {
 }
 
 repositories {
+	jcenter()
     mavenCentral()
 }
 
@@ -36,3 +38,5 @@ appengine {
 		oauth2 = true
     }
 }
+sourceCompatibility = JavaVersion.VERSION_1_7  // App Engine Standard uses Java 7
+targetCompatibility = JavaVersion.VERSION_1_7  // App Engine Standard uses Java 7
